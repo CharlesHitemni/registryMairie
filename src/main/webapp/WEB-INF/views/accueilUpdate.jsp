@@ -52,7 +52,7 @@
 						class="icon-bar"></span>
 				</button>
 				<img
-					style="min-width: 60px; height: 60px; margin-left: -2px; position: absolute; display: block;"
+					style="min-width: 60px; height: 50px; margin-left: -2px; position: absolute; display: block;"
 					src="../bootstrap/ico/logo_mairie.jpg" alt=""> <span
 					class="navbar-brand application-heading">MAIRIE REGISTRY</span>
 			</div>
@@ -68,17 +68,19 @@
 	</nav>
 	<br>
 	<div class="container">
-		<div class="jumbotron">
+		<div class="jumbotron" style="
+   			 padding-top: 2px;
+    		padding-bottom: 5px;">
 			<div class="page-header">
 				<h3>
-					Mise a jour du registry de la mairie de mizemply sous séchoir
+					Mise à jour du registry de la mairie de mizemply sous séchoir
 				</h3>
 			</div>
 		</div>
 	</div>
 	<br>
 	<div class="container">
-		<div class="jumbotron">
+		<div class="jumbotron" >
 			<c:if test="${not empty messageError}">
 				<div class="error">${messageError}</div>
 			</c:if>
