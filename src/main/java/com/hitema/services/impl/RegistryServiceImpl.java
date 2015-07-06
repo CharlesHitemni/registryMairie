@@ -1,5 +1,7 @@
 package com.hitema.services.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -33,5 +35,14 @@ public class RegistryServiceImpl implements RegistryService {
 		Service service = serviceDao.findServiceByName(nameService);
 		return service;
 	}
-
+	
+	public void updateUrlService(Service service) {
+		serviceDao.publishService(service);
+	}
+	
+	public List<Service> getAllServices(){
+		return serviceDao.getAllServices();
+	}
+	
+	
 }
