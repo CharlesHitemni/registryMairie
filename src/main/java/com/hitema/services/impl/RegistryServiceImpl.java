@@ -44,5 +44,10 @@ public class RegistryServiceImpl implements RegistryService {
 		return serviceDao.getAllServices();
 	}
 	
+	public boolean checkOrganisation(String organisationName,String password) {
+		
+		return organisationDao.checkOrganisation(organisationName, password);
+	}
+	
 	
 }

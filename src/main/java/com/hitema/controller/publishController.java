@@ -49,13 +49,21 @@ public class publishController {
     }
 	
 	@RequestMapping(value = "/publishUpdate", method = RequestMethod.POST)
-    public ModelAndView publishUpdate(@RequestParam("serviceSelected")String nameService, @RequestParam("url")String nouvelUrl) {
+    public ModelAndView publishUpdate(@RequestParam("serviceSelected")String nameService, @RequestParam("url")String nouvelUrl,@RequestParam("organisation")String organisation, @RequestParam("password")String password) {
 
 		Service service =registryService.findServiceByName(nameService);
 		service.setUrlService(nouvelUrl);
-        registryService.updateUrlService(service);
 		ModelAndView model = new ModelAndView();
-        model.addObject("messageSucces", "Le service à été mis à jour avec succés!");
+		if (registryService.checkOrganisation(organisation, password))
+		{
+			 registryService.updateUrlService(service);
+			 model.addObject("messageSucces", "Le service à été mis à jour avec succés!");
+		}
+		else
+			model.addObject("messageError", "Vos identifiants sont incorrects!");
+		List<Service> services = registryService.getAllServices();
+		
+        model.addObject("listeServices", services);
         model.setViewName("accueilUpdate");
 
         return model;

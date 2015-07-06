@@ -90,6 +90,25 @@
 			<form:form class="form form-horizontal" method="POST"
 				action="publishUpdate">
 				<fieldset>
+					<legend>Identité</legend>
+					<div class="form-group">
+						<label class="col-sm-3 control-label" for="organisation">Nom
+							de l'organisation :*</label>
+						<div class="col-sm-6">
+							<input id="organisation" class="form-control" placeholder="nom"
+								type="text" name="organisation" required="required" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label" for="password">Mot
+							de passe :*</label>
+						<div class="col-sm-6">
+							<input id="password" class="form-control" type="password"
+								name="password" required="required" />
+						</div>
+					</div>
+				</fieldset>
+				<fieldset>
 					<legend>Mise à jour service</legend>
 					<div class="form-group">
 						<label class="col-sm-3 control-label" for="date">Services</label>

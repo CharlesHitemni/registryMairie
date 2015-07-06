@@ -9,5 +9,6 @@ public interface RegistryService {
 	public Service findServiceByName(String nameService);
 	public void updateUrlService(Service service);
 	public List<Service> getAllServices();
+	public boolean checkOrganisation(String organisationName,String password);
 
 }
